@@ -1,0 +1,46 @@
+// Root build.gradle for Myra AI Project
+buildscript {
+    ext {
+        compileSdkVersion = 34
+        minSdkVersion = 24
+        targetSdkVersion = 34
+        javaVersion = JavaVersion.VERSION_17
+        kotlinVersion = '1.9.22'
+        
+        // Core dependencies
+        androidxCoreVersion = '1.12.0'
+        androidxAppCompatVersion = '1.6.1'
+        materialVersion = '1.11.0'
+        lifecycleVersion = '2.7.0'
+        cameraxVersion = '1.3.1'
+        speechRecognitionVersion = '1.11.0'
+    }
+    
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+}
+
+plugins {
+    id 'com.android.application' version '8.2.0' apply false
+    id 'com.android.library' version '8.2.0' apply false
+    id 'org.jetbrains.kotlin.android' version '1.9.22' apply false
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

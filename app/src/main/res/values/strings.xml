@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Myra AI</string>
+    <string name="notification_listener_label">Myra Notification Listener</string>
+    <string name="app_icon_description">Myra Assistant Icon</string>
+    <string name="voice_activation_notification_title">Myra is Listening</string>
+    <string name="voice_activation_notification_text">Voice activation is active. Say "Myra" to activate.</string>
+    <string name="floating_window_title">Myra Assistant</string>
+    <string name="call_handling_enabled">Myra Call Handling Enabled</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="overlay_permission_text">Myra needs permission to display floating window</string>
+</resources>

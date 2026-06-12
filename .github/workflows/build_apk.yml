@@ -15,15 +15,16 @@ jobs:
           distribution: 'temurin'
           cache: 'gradle'
 
-      - name: Validate Gradle Wrapper
+      - name: Ensure Executable Gradle
         run: |
-          if [ ! -f gradlew ]; then
-            gradle wrapper --gradle-version 8.0
+          gradle_path=$(find . -name gradlew -print -quit)
+          if [ ! -z "$gradle_path" ]; then
+            chmod +x "$gradle_path"
+            cd $(dirname "$gradle_path")
+            ./gradlew assembleDebug --no-daemon
+          else
+            gradle assembleDebug --no-daemon
           fi
-          chmod +x gradlew
-
-      - name: Build with Gradle
-        run: ./gradlew assembleDebug --no-daemon
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
